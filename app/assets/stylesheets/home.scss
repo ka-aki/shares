@@ -101,46 +101,35 @@ body.about-page {
 .subtitle {
   color: rgb(114, 110, 110);
   font-size: 15px;
-  // font-weight: bold;
   text-align: center;
-  margin: 10px 0 80px;
+  margin: 10px 0;
 }
 .wrapper {
-  margin: 100px auto;
+  margin: 80px 30px;
 }
 .message-container {
   display: flex;
   align-items: center;
+  margin: 50px 0;
 }
 .message-images {
   width: 60%;
-  // height: 50%;
-  margin: 20px;
 }
 .expense-images {
   width: 60%;
-  // height: 80%;
-  margin: 20px;
 }
 .message-content {
   color: rgb(122, 120, 120);
   font-size: 16px;
-  margin: 20px;
-}
-.count {
-  font-size: 30px;
-  text-align: left;
-  margin: 20px;
+  margin: 0 auto;
 }
 
 .title-text {
   font-size: 25px;
-  text-align: left;
-  margin: 25px;
+  margin: 30px 0;
+  color: rgb(252, 122, 144);
 }
 
 .detail-text {
-  text-align: left;
   font-size: 18px;
-  margin: 0 25px;
 }
