@@ -1,0 +1,24 @@
+<body class="home">
+  <div class="form-container">
+    <div class="form-title">新しくルームを作る</div>
+      <%= form_tag("/groups", :method => :post) do%>
+          <input name="name" placeholder="新規ルーム名" class="form-input"> 
+          <input type="password" name="password" placeholder="パスワード" class="form-input">
+        <div class="button">
+            <input type="submit" value="作成" class="form-submit">
+        </div>
+      <% end%>
+  </div>
+  <div class="form-container" >
+    <div class="or">または</div>
+    <div class="form-title" style="margin:0;">すでに登録されているルームに</div>
+    <div class="form-title">入る</div>
+      <%= form_tag("/groups", :method => :post) do%>
+        <input name="group_name" placeholder="ルーム名" class="form-input">
+        <input name="group_password" type="password" placeholder="ルームパスワード" class="form-input">
+        <div class="button">
+            <input type="submit" value="参加" class="form-submit">
+        </div>
+      <% end%>
+  </div>
+</body>

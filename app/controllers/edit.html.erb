@@ -1,0 +1,12 @@
+<body class="home2">    
+    <div class="message-board">
+        <div class="message-container">
+    <%= form_tag("/posts/#{@post.id}", :method => :patch) do %>
+                <textarea name="content" class="message-textarea" cols="50" rows="6"><%= @post.content%></textarea>
+                <div class="button">
+                    <input type="submit" value="編集" class="message-submit">
+                </div>
+            <% end%>
+        </div>
+    </div>
+</body>

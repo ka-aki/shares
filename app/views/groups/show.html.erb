@@ -1,0 +1,13 @@
+<body class="home2">
+ <div class="white-container">
+    <%= form_tag("/groups/#{@group.id}", {multipart: true, :method => :patch}) do%>
+        <div class="white-input-title">ルーム名</div>
+          <input name="name" value="<%=@group.name%>" class="white-input">
+        <div class="white-input-title">パスワード</div>
+          <input type="password" name="password" value="<%=@group.password%>" class="white-input">
+        <div class="white-input-title">画像</div>
+          <input type="file" name="image" value="<%=@group.image_name %>" class="white-input">
+          <input type="submit" value="変更" class="white-submit">
+    <% end%>
+  </div>
+</body>

@@ -1,0 +1,16 @@
+<body class="home2">
+    <div class="white-container-expenses">
+        <%= form_tag("/expenses/#{@expense.id}", :method => :patch) do %>
+            <div  style="padding-top:4px;">
+                <%= select_tag :month, options_for_select([["1", "1"],["2", "2"], ["3", "3"], ["4", "4"],["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"],["10", "10"],["11", "11"],["12", "12"]], :selected => @expense.month), autofocus: 'true', class: 'white-select-month' %>月
+             </div>
+             <div style="padding-top:4px;">
+                <%= select_tag :label, options_for_select([["食費", "食費"], ["日用品", "日用品"],  ["水道", "水道"], ["ガス", "ガス"],["光熱費", "光熱費"]], :selected => @expense.label), autofocus: 'true', class: 'white-select' %>代
+             </div>
+             <div style="padding-top:4px;"> 
+                <%= text_field :expense, :price, autofocus: 'true', class: 'white-input-price' %>円
+            </div>
+                <input type="submit" class="white-submit">
+        <% end %>
+    </div>
+</body>

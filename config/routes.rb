@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'groups/index'
+
+  get 'expenses/index'
+
+  get 'posts/index'
+
   get 'users/index'
 
   root :to => 'home#top'

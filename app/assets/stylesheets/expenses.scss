@@ -1,0 +1,135 @@
+.expenses-menu ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 30px;
+}
+
+.expenses-menu li a {
+  color: gray;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px;
+}
+.form-graph {
+  display: flex;
+  align-items: center;
+}
+.white-container-expenses {
+  box-shadow: 0 2px 6px #c1ced7;
+  text-align: center;
+  margin: 50px auto;
+  max-width: 400px;
+  padding: 50px 100px;
+  background-color: #fff;
+}
+.white-select {
+  width: 130px;
+  text-indent: 5px;
+  text-overflow: '';
+  background: none transparent;
+  // vertical-align: middle;
+  font-size: 14px;
+  color: inherit;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  margin: 10px;
+}
+.white-select-month {
+  width: 130px;
+  text-indent: 4px;
+  text-overflow: '';
+  background: none transparent;
+  font-size: 15px;
+  height: 22px;
+  color: inherit;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  margin: 10px;
+}
+.white-input-price {
+  display: inline-block;
+  // background-color: #f2f7fa;
+  margin: 12px 10px;
+  font-size: 15px;
+  width: 122px;
+}
+
+.white-submit {
+  display: block;
+  background-color: #ff6699;
+  color: white;
+  font-size: 14px;
+  margin: 20px 0 0;
+  width: 150px;
+  padding: 3px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px #c1ced7;
+  border-style: none;
+}
+
+.graph {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.total-graph {
+  display: flex;
+  justify-content: center;
+  margin: 100px auto;
+  width: 40%;
+  height: 30%;
+}
+.graph-table {
+  display: flex;
+  align-items: center;
+  margin: 100px 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 50%;
+  margin: 0 auto;
+}
+table.total-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 80%;
+  margin: 60px auto;
+}
+
+table tr {
+  border-bottom: solid 1px rgb(223, 218, 218);
+  cursor: pointer;
+}
+
+table tr.hover-color:hover {
+  background-color: #fa669f6c;
+}
+
+table th,
+table td {
+  text-align: center;
+  width: 200px;
+  padding: 15px 0px;
+}
+
+table td a {
+  text-decoration: none;
+  color: rgba(51, 51, 48, 0.801);
+}
+
+td.name {
+  text-align: left;
+  // margin-left: 40px;
+}
+
+.icon {
+  width: 40px;
+  vertical-align: middle;
+  margin: 0 5px 5px 50px;
+}

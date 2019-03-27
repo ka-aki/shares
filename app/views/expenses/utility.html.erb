@@ -1,0 +1,72 @@
+<body class="home2">
+<div class="expenses-menu">
+    <ul>
+        <li>
+            <%= link_to("総計", "/expenses") %>
+        </li>
+        <li>
+            <%= link_to("食費", "/expenses/food") %>
+        </li>
+        <li>
+            <%= link_to("日用品", "/expenses/commodity") %>
+        </li>
+        <li>
+            <%= link_to("光熱費", "/expenses/utility") %>
+        </li>
+        <li>
+            <%= link_to("水道代", "/expenses/water") %>
+        </li>
+    </ul>
+</div>
+
+
+<div class="graph-table">
+    <div class="graph"> 
+        <canvas id="myChart" width="500" height="300"></canvas>
+        <script>
+        var ctx = document.getElementById("myChart").getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: <%= @labels.to_json.html_safe %>,
+                datasets: [{
+                    label: "光熱費",
+                    data: <%= @datas %>,
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                    borderColor: 'rgba(54, 162, 235, 0.6)',
+                    lineTension: 0.15,
+                    fill: true
+                }]
+            },
+            options: {
+                title:  {
+                display: true,
+                text: "光熱費"
+                }
+            }
+        });
+        </script>
+    </div>
+
+
+    <table>
+        <tr>
+            <th>名前</th>
+            <th>月</th>
+            <th>費用</th>
+            <th>いくら</th>
+        </tr>
+        <% @utilityexpenses.each do |e| %>
+        <% if e.group_id == @group_id%>
+            <tr class="hover-color">
+                <td class="name"><%= image_tag("/user_images/#{e.user.image_name}", :class => "icon")%><%= e.user.name %></td>
+                <td><%= link_to "#{e.month}月", "/expenses/#{e.id}/edit "%></td>
+                <td><%= link_to "#{e.label}代", "/expenses/#{e.id}/edit "%></td>
+                <td><%= link_to "#{e.price}円", "/expenses/#{e.id}/edit "%></td>
+                <td><%= link_to "削除", "/expenses/#{e.id}", method: :delete %></td>
+            </tr>
+        <% end %>
+        <% end %>
+    </table>
+</div>
+</body>

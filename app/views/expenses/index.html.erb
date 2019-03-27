@@ -1,0 +1,85 @@
+<body class="home2">
+<div class="expenses-menu">
+    <ul>
+        <li>
+            <%= link_to("総計", "/expenses") %>
+        </li>
+        <li>
+            <%= link_to("食費", "/expenses/food") %>
+        </li>
+        <li>
+            <%= link_to("日用品", "/expenses/commodity") %>
+        </li>
+        <li>
+            <%= link_to("光熱費", "/expenses/utility") %>
+        </li>
+        <li>
+            <%= link_to("水道代", "/expenses/water") %>
+        </li>
+    </ul>
+</div>
+  <div class="form-graph">
+    <div class="white-container-expenses">
+        <%= form_for @expense do |f| %>
+            <div  style="padding-top:4px;">
+                <%= f.select :month, [["1", "1"],["2", "2"], ["3", "3"], ["4", "4"],["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"],["10", "10"],["11", "11"],["12", "12"]], {}, { autofocus: 'true', class: 'white-select-month'} %>月
+            </div>
+             <div style="padding-top:4px;">
+                <%= f.select :label, [["総計", "総計"],["食費", "食費"], ["日用品", "日用品"], ["光熱費", "光熱費"],["水道", "水道"]], {}, { autofocus: 'true', class: 'white-select'} %>代
+            </div>
+            <%= f.text_field :price, :placeholder => "半角数字で入力",  class: "white-input-price" %>円
+            <%= f.submit "作成", class: "white-submit" %>
+        <% end %>
+    </div>
+
+      <div class="total-graph"> 
+        <canvas id="myChart" width="300" height="200"></canvas>
+           
+
+        <script>
+        var ctx = document.getElementById("myChart").getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: <%= @labels.to_json.html_safe %>,
+                datasets: [{
+                    label: "総計",
+                    data: <%= @datas %>,
+                    backgroundColor: '#99CCFF',
+                    borderColor: '#4689FF',
+                    lineTension: 0.15,
+                    fill: true
+                }]
+            },
+            options: {
+                title:  {
+                display: true,
+                text: "総計",
+                },
+            }
+        });
+        </script>
+    </div>
+    </div>
+
+    <table class="total-table">
+        <tr>
+            <th>名前</th>
+            <th>月</th>
+            <th>費用</th>
+            <th>いくら</th>
+        </tr>
+        <% @expenses.each do |e| %>
+         <% if e.group_id == @group_id%>
+            <tr class="hover-color">
+                <td class="name"><%= image_tag("/user_images/#{e.user.image_name}", :class => "icon")%><%= e.user.name %></td>
+                <td><%= link_to "#{e.month}月", "/expenses/#{e.id}/edit "%></td>
+                <td><%= link_to "#{e.label}代", "/expenses/#{e.id}/edit "%></td>
+                <td><%= link_to "#{e.price}円", "/expenses/#{e.id}/edit "%></td>
+                <td><%= link_to "削除", "/expenses/#{e.id}", method: :delete %></td>
+            </tr>
+         <% end %>
+        <% end %>
+    </table>
+</body>
+

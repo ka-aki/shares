@@ -1,0 +1,51 @@
+<body class="home2">
+    <div class="message-board">
+        <div class="message-container">
+            <%= form_tag("/posts") do %>
+                <textarea name="content" placeholder="メッセージを残そう" class="message-textarea" cols="50" rows="6"></textarea>
+                <div class="button">
+                    <input type="submit" value="投稿" class="message-submit">
+                </div>
+            <% end%>
+        </div>
+    </div>
+    <% @posts.each do |post| %>
+        <% if post.group_id == @group_id%>
+            <% if post.user_id == @current_user.id %>
+                <div class="show-messages">
+                    <div class="my-messages-content">
+                        <%= post.content %>
+                        <div class="messages-footer">
+                            <div class="messages-time">
+                                <%= post.updated_at %>
+                            </div>
+                            <div class="edit_delete">
+                                <%= link_to("編集", "/posts/#{post.id}/edit", class: "messages-edit")%>
+                                <%= link_to("削除", "/posts/#{post.id}", { method: "delete", class: "messages-edit" } )%>
+                            </div>
+                        </div>
+                    </div>
+                    <%= image_tag("/user_images/#{post.user.image_name}", :class => "messages-icon") %>
+                    <%= link_to(post.user.name, "/users/#{post.user.id}",  class: "messages-name")%>
+                </div>
+            <% else %>
+                <div class="show-messages2">
+                    <%= image_tag("/user_images/#{post.user.image_name}", :class => "messages-icon") %>
+                    <%= link_to(post.user.name, "/users/#{post.user.id}",  class: "messages-name")%>
+                    <div class="other-messages-content">
+                        <%= post.content %>
+                        <div class="messages-footer">
+                            <div class="messages-time">
+                                <%= post.updated_at %>
+                            </div>
+                            <div>
+                                <%= link_to("編集", "/posts/#{post.id}/edit", class: "messages-edit")%>
+                                <%= link_to("削除", "/posts/#{post.id}", { method: "delete", class: "messages-edit" } )%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+    <% end %>
+</body>
