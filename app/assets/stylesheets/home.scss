@@ -12,8 +12,9 @@ header {
 .header-logo a {
   text-decoration: none;
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
+  letter-spacing: 2px;
 }
 
 .header-menu ul {
@@ -104,13 +105,21 @@ body.about-page {
   text-align: center;
   margin: 10px 0 80px;
 }
+.wrapper {
+  margin: 100px auto;
+}
 .message-container {
   display: flex;
   align-items: center;
 }
-.about-images {
-  width: 50%;
-  height: 50%;
+.message-images {
+  width: 60%;
+  // height: 50%;
+  margin: 20px;
+}
+.expense-images {
+  width: 60%;
+  // height: 80%;
   margin: 20px;
 }
 .message-content {
@@ -131,5 +140,7 @@ body.about-page {
 }
 
 .detail-text {
+  text-align: left;
   font-size: 18px;
+  margin: 0 25px;
 }
