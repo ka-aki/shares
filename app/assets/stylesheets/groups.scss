@@ -1,3 +1,39 @@
-// Place all the styles related to the groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.or {
+  font-size: 20px;
+  margin-bottom: 6px;
+  color: rgb(240, 116, 142);
+  font-weight: bold;
+}
+.white-container {
+  box-shadow: 0 2px 6px #c1ced7;
+  text-align: center;
+  margin: 50px auto;
+  max-width: 400px;
+  padding: 26px 20px 20px 20px;
+  background-color: #fff;
+}
+.white-container-image {
+  width: 20%;
+}
+.white-input-title {
+  margin: 30px 0 5px;
+  font-size: 14px;
+}
+.white-input {
+  display: block;
+  margin: 0 auto;
+  height: 20px;
+  width: 250px;
+}
+
+.white-submit {
+  background-color: #ff6699;
+  color: white;
+  font-size: 14px;
+  border-radius: 5px;
+  width: 250px;
+  padding: 3px;
+  box-shadow: 0 2px 6px #c1ced7;
+  border-style: none;
+  margin: 30px auto;
+}
