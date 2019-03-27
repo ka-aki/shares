@@ -1,14 +1,61 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Shares</title>
+    <title>Shareeeee</title>
     <%= csrf_meta_tags %>
-
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body style="margin:0;">
+   <header>
+    <div class="header-logo">
+        <% if @current_user %>
+          <%= link_to("Shareeee", "/posts") %>
+        <% else %>
+          <%= link_to("Shareeee", "/") %>
+        <% end %>
+    </div>
+    <div class="header-menu">
+      <ul>
+        <% if @group_user %>
+          <li>
+            <%= link_to("#{@current_user.name}のマイページ", "/users/#{@current_user.id}") %>
+          </li>
+          <% if @group_user %>
+          <li>
+            <%= link_to("#{@group_user.group.name}", "/groups/#{@group_user.group_id}") %>
+          </li>
+          <% end %>
+          <li>
+            <%= link_to("メッセージ", "/posts") %>
+          </li>
+          <li>
+            <%= link_to("家計簿", "/expenses") %>
+          </li>
+          <li>
+            <%= link_to("ログアウト", "/logout", { method: :post}) %>
+          </li>
+          <% else %>
+            <li>
+              <%= link_to("Shareeeeとは", "/about") %>
+            </li>
+            <li>
+              <%= link_to("新規登録", "/users/new") %>
+            </li>
+            <li>
+              <%= link_to("ログイン", "/login") %>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+  </header>
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice]%>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

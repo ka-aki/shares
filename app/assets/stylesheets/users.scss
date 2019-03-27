@@ -1,0 +1,63 @@
+// ----------新規登録とログイン-----------
+.form-container {
+  box-shadow: 0 2px 6px #c1ced7;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 26px 20px 20px 20px;
+  background-color: rgba(245, 239, 244, 0.589);
+}
+
+.form-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+input.form-input {
+  display: block;
+  background-color: #f2f7fa;
+  margin: 0 auto;
+  height: 26px;
+  width: 300px;
+}
+
+input.form-submit {
+  background-color: #ff6699;
+  color: white;
+  font-size: 14px;
+  border-radius: 5px;
+  width: 308px;
+  padding: 3px;
+  box-shadow: 0 2px 6px #c1ced7;
+  border-style: none;
+  margin: 20px 0 15px;
+}
+
+.radio-inline__input {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute;
+}
+
+.radio-inline__label {
+  margin: 20px 4px 0;
+  display: inline-block;
+  padding: 4px 30px;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+
+.radio-inline__input:checked + .radio-inline__label {
+  background: #5cabff;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 2px 6px #c1ced7;
+  border-style: none;
+}
+
+.radio-inline__input:focus + .radio-inline__label {
+  outline-offset: -2px;
+  outline-style: auto;
+  outline-width: 5px;
+}

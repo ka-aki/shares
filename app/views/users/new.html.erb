@@ -1,0 +1,21 @@
+<body class="home">
+  <div class="form-container">
+     <div class="form-title">新規ユーザー登録</div>
+    <%= form_tag("/users") do %>
+          <input name="name" placeholder="ニックネーム" class="form-input">
+          <input name="email" placeholder="メールアドレス" class="form-input">
+          <input type="password" name="password" placeholder="パスワード" class="form-input">
+
+          <input id="item-1" class="radio-inline__input" type="radio" name="sex" value="女" checked="checked"/>
+          <label class="radio-inline__label" for="item-1">
+              female
+          </label>
+          <input id="item-2" class="radio-inline__input" type="radio" name="sex" value="男"/>
+          <label class="radio-inline__label" for="item-2">
+              male
+          </label>
+                  
+          <input type="submit" class="form-submit">
+    <% end %>
+  </div>
+</body>

@@ -1,0 +1,19 @@
+<body class="home2">
+ <div class="white-container">
+   <%= image_tag("/user_images/#{@user.image_name}", :class => "white-container-image") %>
+    <%= form_tag("/users/#{@user.id}", {multipart: true, :method => :patch}) do%>
+        <div class="white-input-title">ニックネーム</div>
+          <input name="name" value="<%=@user.name%>" class="white-input">
+        <div class="white-input-title">メールアドレス</div>
+          <input name="email" value="<%=@user.email%>" class="white-input">
+        <div class="white-input-title">パスワード</div>
+          <input type="password" name="password" value="<%=@user.password%>" class="white-input">
+        <div class="white-input-title">画像</div>
+          <input type="file" name="image" value="<%=@user.image_name%>">
+          <input type="submit" value="変更" class="white-submit">
+    <% end%>
+        <%# <div class="button" style="margin: 50px;">
+          <input type="submit" value="アカウントを削除する">
+        </div> %>
+  </div>
+</body>

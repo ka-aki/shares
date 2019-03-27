@@ -1,0 +1,10 @@
+<body class="home">
+  <div class="form-container">
+    <div class="form-title">ログイン</div>
+    <%= form_tag("/login") do %>
+        <input name="email" placeholder="メールアドレス" class="form-input">
+        <input type="password" name="password" placeholder="パスワード" class="form-input">
+        <input type="submit" class="form-submit">
+    <% end %>
+  </div>
+</body>
